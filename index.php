@@ -1,6 +1,8 @@
+<link rel="stylesheet" type="text/css" href="public/css/styles.css">
 <?php
 require_once 'config/config.php';
 require_once 'app/controllers/EquipoController.php';
+require_once 'app/controllers/JugadorController.php';
 
 $controller = isset($_GET['controller']) ? $_GET['controller'] : 'equipo';
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';

@@ -2,10 +2,12 @@
 require_once 'app/models/Equipo.php';
 class EquipoController {
     private $equipo;
+    private $jugador;
 
     public function __construct() {
         global $pdo;
         $this->equipo = new Equipo($pdo);
+        $this->jugador = new Jugador($pdo);
     }
 
     public function index() {
@@ -22,10 +24,15 @@ class EquipoController {
         }
     }
 
-    public function list_players() {
+    public function info() {
         $equipoInfo = $this->equipo->listEquipoInfo($_GET['equipo_id']);
+        $jugadores = $this->jugador->getJugadoresPorEquipo($_GET['equipo_id']);
+        include 'app/views/equipos/info.php';
+    }
 
-        include 'app/views/equipos/list_players.php';
+    public function capitan() {
+        $capitan = $this->equipo->getCapitan($_GET['equipo_id']);
+        include 'app/views/equipos/capitan.php';
     }
 }
 ?>
