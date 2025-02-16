@@ -1,0 +1,1 @@
+Todas las variables y nombres de los archivos suelen nombrarse siempre en inglés, al haberse solicitado y especificado en el PDF que serían en castellano, así se hizo.
