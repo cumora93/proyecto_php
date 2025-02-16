@@ -21,5 +21,11 @@ class Equipo {
         $stmt->execute([$equipo_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getCapitan($equipo_id) {
+        $stmt = $this->pdo->prepare("SELECT * FROM jugadores WHERE equipo_id = ? AND numero = 1");
+        $stmt->execute([$equipo_id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>
